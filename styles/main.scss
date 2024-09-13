@@ -1,0 +1,209 @@
+@use "./partials/variablesA" as *;
+@use "./partials/mixinA" as *;
+@use "./partials/animationA";
+@use "./partials/globalA";
+
+.section {
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  &--pokemon {
+    background: linear-gradient(
+      135deg,
+      map-get($colors-pokemon, sky),
+      map-get($colors-pokemon, clear-sky),
+      map-get($colors-pokemon, energy),
+      map-get($colors-pokemon, sunlight),
+      map-get($colors-pokemon, cloud)
+    );
+  }
+
+  &--nasa {
+    background: linear-gradient(
+      135deg,
+      map-get($colors-nasa, deep-unknown),
+      map-get($colors-nasa, subtle-space-ambiance),
+      map-get($colors-nasa, star-light),
+      map-get($colors-nasa, depth-creation),
+      map-get($colors-nasa, nebula-like-effect),
+      map-get($colors-nasa, mystery-of-space)
+    );
+    color: map-get($colors-common, white);
+  }
+
+  &__heading {
+    animation: scaleTitle 2s ease-in-out infinite;
+  }
+  &__heading--pokemon {
+    font-family: "Oswald";
+  }
+  &__heading--nasa {
+    font-family: "Space Grotesk";
+  }
+  &__content-wrapper {
+    margin-left: 3.9375rem;
+    width: 50%;
+  }
+  &__img--pokemon {
+    width: auto;
+    height: 7rem;
+  }
+  &__img--nasa {
+    border-radius: 50%;
+    width: auto;
+  }
+  &__button {
+    margin-bottom: 0.75rem;
+  }
+  &__button--hidden {
+    display: none;
+  }
+  &__button-link-start {
+    text-decoration: none;
+  }
+  &__button--yes {
+    animation: scaleButton 2s ease-in-out infinite;
+  }
+  &__button--pokemon-yes {
+    font-family: "Oswald";
+    background-color: #ffcb05;
+    color: #3b4cca;
+    border: 2px solid #3b4cca;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover {
+      background-color: #3b4cca;
+      color: #ffcb05;
+    }
+    &:active {
+      background-color: #ff0000;
+      color: #ffffff;
+    }
+  }
+  &__button--nasa-yes {
+    font-family: "Space Grotesk";
+    background-color: #0b3d91;
+    color: #ffffff;
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    &:hover {
+      background-color: #ff0000;
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+    &:active {
+      background-color: #0b3d91;
+      border-color: #ffffff;
+      color: #ff0000;
+    }
+  }
+  &__button--pokemon-start {
+    font-family: "Oswald";
+    background-color: #ffcb05;
+    color: #3b4cca;
+    border: 2px solid #3b4cca;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover {
+      background-color: #3b4cca;
+      color: #ffcb05;
+    }
+    &:active {
+      background-color: #ff0000;
+      color: #ffffff;
+    }
+  }
+  &__button--nasa-start {
+    font-family: "Space Grotesk";
+    background-color: #ffcb05;
+    color: #3b4cca;
+    border: 2px solid #3b4cca;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover {
+      background-color: #3b4cca;
+      color: #ffcb05;
+    }
+    &:active {
+      background-color: #ff0000;
+      color: #ffffff;
+    }
+  }
+  &__button--pokemon-cancel {
+    font-family: "Oswald";
+    background-color: #f5f5f5;
+    color: #6b6b6b;
+    border: 1px solid #ffd700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    &:hover {
+      background-color: #e8e8e8;
+      border-color: #ffcb05;
+      color: #3b4cca;
+    }
+    &:active {
+      background-color: #d0d0d0;
+      border-color: #0b3d91;
+      color: #0b3d91;
+    }
+  }
+  &__button--nasa-cancel {
+    font-family: "Space Grotesk";
+    background-color: #f0f0f0;
+    color: #6c757d;
+    border: 1px solid #6c757d;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    &:hover {
+      background-color: #e0e0e0;
+      border-color: #0b3d91;
+      color: #0b3d91;
+    }
+    &:active {
+      background-color: #d0d0d0;
+      border-color: #0b3d91;
+      color: #0b3d91;
+    }
+  }
+  &__button--start {
+    animation: scaleButton 2s ease-in-out infinite;
+  }
+}
+
+// @include tablet {
+//   .section {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-around;
+//   }
+// }
+
+// @include desktop {
+//   .section__heading {
+//     width: 30%;
+//     margin-left: 3.9375rem;
+//   }
+//   .section__buton {
+//     width: 10%;
+//   }
+//   .section__img {
+//     width: auto;
+//   }
+// }

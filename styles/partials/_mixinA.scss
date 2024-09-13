@@ -1,0 +1,41 @@
+@use "./variablesA" as *;
+
+// @mixin tablet {
+//   @media (min-width: $min-tablet-breakpoint) {
+//     @content;
+//   }
+// }
+
+// @mixin desktop {
+//   @media (min-width: $min-desktop-breakpoint) {
+//     @content;
+//   }
+// }
+
+@mixin h1 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  margin: 0;
+  padding: 1rem 0;
+  @media (min-width: $min-tablet-breakpoint) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@mixin p {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin: 0;
+  @media (min-width: $min-tablet-breakpoint) {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+@mixin button {
+  padding: 0.5rem 1.5rem;
+  @media (min-width: $min-tablet-breakpoint) {
+    padding: 0.6rem 2.25rem;
+  }
+}

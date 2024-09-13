@@ -1,0 +1,28 @@
+@use "./mixinA" as *;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+h1 {
+  @include h1;
+}
+
+p {
+  @include p;
+}
+
+button {
+  @include button;
+}
